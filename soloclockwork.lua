@@ -46,8 +46,3 @@ while true do
     end
     os.sleep(0.5)   --must be 0.5; 1 second = 20 ticks
 end
-    
---hello
-
-
---yabba
