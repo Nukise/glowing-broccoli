@@ -14,22 +14,17 @@ function shouldPlayChime(time)
     (time >= morningFloor and time < morningCeiling)
 end
 
-inter.open(43)
-
-
 while true do
     local time = os.time()
-    local message = os.pullEvent("modem_message")
-    if shouldPlayChime(time) then
-        
-        print("Time:",time, "sending message")
-        inter.transmit(15,43,"Assemble")
-
-    else 
-        print("Time:",time)    
-        if message then
+    if shouldPlayChime(time) then 
+        print("Time:",time, "Avengers!!!")
+        inter.transmit(15,43,"Avengers!!!")
+        local event, side, channel, replyChannel, message, distance = os.pullEvent("modem_message")
+        if message == "ASSEMBLE!!!!!" then
             print(message)
         end
+    else 
+        print("Time:",time)   
     end
     os.sleep(0.5)   --must be 0.5; 1 second = 20 ticks
 end
