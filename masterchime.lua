@@ -13,7 +13,7 @@ function shouldPlayChime(time)
     (time >= nightFloor and time < nightCeiling) or 
     (time >= morningFloor and time < morningCeiling)
 end
-
+inter.open(43)
 while true do
     local time = os.time()
     if shouldPlayChime(time) then 
