@@ -1,5 +1,6 @@
 local monitor = peripheral.find("monitor") or error("monitor not found",0)
 local modem = peripheral.find("modem") or error ("modem not found",0)
+print("activated")
 term.redirect(monitor)
 
 function pos(...) return term.setCursorPos(...) end
